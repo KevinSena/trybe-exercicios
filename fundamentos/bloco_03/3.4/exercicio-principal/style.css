@@ -29,3 +29,12 @@ main{
     max-width: 1280px;
     margin: auto;
 }
+main section img{
+    max-width: 300px;
+}
+footer{
+    margin-top: 50px;
+    max-width: 1280px;
+    margin: auto;
+    text-align: center;
+}
