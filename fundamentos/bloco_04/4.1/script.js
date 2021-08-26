@@ -175,24 +175,31 @@ if (valorCusto <= 0 ||  valorVenda <= 0 ) {
 console.log("\nSalário deduzido o imposto de renda e INSS");
 
 const salarioBruto = 3000
-var salario = 0
+let aliquotaINSS;
 
 if (salarioBruto < 1556.94) {
-  salario -= salario*8/100
-  return salario
+  aliquotaINSS = salarioBruto * 8/100
 }else if(salarioBruto >= 1556.95 && salarioBruto < 2594.92){
-  salario -= salario*9/100
-  return salario
+  aliquotaINSS = salarioBruto * 9/100
 }else if(salarioBruto >= 2594.92 && salarioBruto <5189.82){
-  salario = salario - salario * 0.11
-  console.log(salario);
+  aliquotaINSS = salarioBruto * 0.11
 }else{
-  salario -= 570.88
-  return salario
+  aliquotaINSS = 570.88
 }
 
+const salarioBase = salarioBruto - aliquotaINSS
+let impostoRenda;
 
-/*if (salario < 1903.98) {
-  salario 
+if (salarioBase < 1903.98) {
+  impostoRenda = 0
+}else if(salarioBase >= 1903.98 && salarioBase < 2826.65){
+  impostoRenda = salarioBase*7.5/100 - 142.8
+}else if(salarioBase >= 2826.65 && salarioBase < 3751.05){
+  impostoRenda = salarioBase*15/100 - 354.8
+}else if(salarioBase >= 3751.05 && salarioBase < 4664.68){
+  impostoRenda = salarioBase*22.5 - 636.13
+}else{
+  impostoRenda = salarioBase*27.5 - 869.36
 }
-*/
+
+console.log("Salário final de " + (salarioBase - impostoRenda) + " reais");
