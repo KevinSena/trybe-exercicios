@@ -40,3 +40,17 @@ if (mediaAritmetica > 20) {
 } else {
   console.log("valor menor que 20");
 }
+
+// task 5
+
+console.log("\nUtilizando for , descubra qual o maior valor contido no array e imprima-o:");
+
+let maiorValor = numbers[0]
+
+for (let index = 1; index < numbers.length; index+=1) {
+  if(numbers[index] > maiorValor){
+    maiorValor = numbers[index]
+  }
+}
+
+console.log(maiorValor);
