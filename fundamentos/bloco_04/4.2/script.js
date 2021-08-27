@@ -54,3 +54,34 @@ for (let index = 1; index < numbers.length; index+=1) {
 }
 
 console.log(maiorValor);
+
+// task 6
+
+console.log("\nDescubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: 'nenhum valor ímpar encontrado'");
+
+let numeroImpares = 0
+
+for (let i = 0; i < numbers.length; i+=1) {
+  if(numbers[i]%2 !== 0){
+    numeroImpares += 1
+    console.log(numbers[i])
+  }
+}
+
+if(numeroImpares === 0){
+  console.log("nenhum valor ímpar encontrado");
+}
+
+// task 7 
+
+console.log("\nUtilizando for , descubra qual o menor valor contido no array e imprima-o");
+
+let menorValor = numbers[0]
+
+for (let index = 1; index < numbers.length; index+=1) {
+  if(numbers[index] < menorValor){
+    menorValor = numbers[index]
+  }
+}
+
+console.log(menorValor);
