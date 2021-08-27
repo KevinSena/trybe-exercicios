@@ -23,3 +23,16 @@ for (let i = 0; i < n; i += 1) {
   linha2 += '*'
   console.log(linha2)
 }
+
+// task 3
+
+console.log("\nImprime triângulo retângulo invertido");
+
+let linha3 = ''
+
+for (let i = n; i > 0; i -= 1) {
+  linha3 += '*'
+  let str = new Array(i)
+  let newStr = str.join(' ') + linha3
+  console.log(newStr);
+}
