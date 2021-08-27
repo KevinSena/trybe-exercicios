@@ -97,3 +97,15 @@ for(let i = 1; i <= 25; i += 1){
 }
 
 console.log(array1_25);
+
+// task 9
+
+console.log("\nUtilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2");
+
+let divisao2 = []
+
+for (let i = 0; i < array1_25.length; i+=1) {
+  divisao2.push(array1_25[i]/2)
+}
+
+console.log(divisao2);
