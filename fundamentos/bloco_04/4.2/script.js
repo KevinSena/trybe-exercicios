@@ -85,3 +85,15 @@ for (let index = 1; index < numbers.length; index+=1) {
 }
 
 console.log(menorValor);
+
+// task 8
+
+console.log("\nUtilizando for , crie um array que vá de 1 até 25 e imprima o resultado");
+
+let array1_25 = []
+
+for(let i = 1; i <= 25; i += 1){
+  array1_25.push(i)
+}
+
+console.log(array1_25);
