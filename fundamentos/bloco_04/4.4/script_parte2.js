@@ -1,5 +1,5 @@
 // task 1
-
+/*
 function verificaPalindromo(palindromo) {
   let array = []
   array1 = palindromo.split('')
@@ -15,8 +15,20 @@ function verificaPalindromo(palindromo) {
 
 let verificar = verificaPalindromo('arara')
 console.log(verificar);
-
+*/
 
 // Task 2
 
+let arrayTeste = [2, 3, 6, 7, 10, 1]
 
+function maiorValor(array) {
+  let flag = 0
+  for (let key in array) {
+    if (array[key] > array[0]) {
+      flag = key
+    }
+  }
+  console.log(flag);
+}
+
+maiorValor(arrayTeste)
