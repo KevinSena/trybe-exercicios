@@ -96,7 +96,7 @@ maisSeRepete(arrayTeste4)
 */
 
 // Task 6
-
+/*
 function somaDeTodos(params) {
   let soma = 0
 
@@ -108,3 +108,13 @@ function somaDeTodos(params) {
 }
 
 somaDeTodos(5)
+*/
+
+// Task 7
+
+function terminaCom(word, ending) {
+  let response = word.endsWith(ending)
+  console.log(response);
+}
+
+terminaCom("trybe", "be")
