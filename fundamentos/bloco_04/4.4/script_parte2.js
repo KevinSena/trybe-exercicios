@@ -69,7 +69,7 @@ maiorNome(arrayTeste3)
 */
 
 // Task 5
-
+/*
 let arrayTeste4 = [2, 3, 2, 5, 8, 2, 3]
 
 function maisSeRepete(array) {
@@ -93,3 +93,18 @@ function maisSeRepete(array) {
 }
 
 maisSeRepete(arrayTeste4)
+*/
+
+// Task 6
+
+function somaDeTodos(params) {
+  let soma = 0
+
+  for (let i = 1; i <= params; i+=1) {
+    soma += i
+  }
+
+  console.log(soma);
+}
+
+somaDeTodos(5)
