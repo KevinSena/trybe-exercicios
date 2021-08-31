@@ -52,7 +52,7 @@ maiorValor(arrayTeste2)
 */
 
 // Task 4
-
+/*
 let arrayTeste3 = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']
 
 function maiorNome(array) {
@@ -66,3 +66,30 @@ function maiorNome(array) {
 }
 
 maiorNome(arrayTeste3)
+*/
+
+// Task 5
+
+let arrayTeste4 = [2, 3, 2, 5, 8, 2, 3]
+
+function maisSeRepete(array) {
+  let flag = 0
+  let objectSeted = 0
+  
+  for (let i = 0; i < array.length; i += 1) {
+    let count = 0
+    for (let iterator of array) {
+      if (array[i] === iterator) {
+        count += 1
+        if (count > flag) {
+          flag = count
+          objectSeted = array[i]
+        }
+      }
+    }
+  }
+
+  console.log(objectSeted);
+}
+
+maisSeRepete(arrayTeste4)
