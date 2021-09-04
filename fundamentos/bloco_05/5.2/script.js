@@ -25,6 +25,12 @@ function loopElements(element, tag, array, className) {
   }
 }
 
+function rmLastItem(x) {
+  for (let i = 0; i < x; i += 1) {
+    let item = ul[0].removeChild(ul[0].lastChild)
+  }
+}
+
 appendToChild(body, 'h1', 'Exercício 5.2 - JavaScript DOM', 'title')
 appendToChild(body, 'main', '', 'main-content')
 appendToChild(main[0], 'section', '', 'center-content')
@@ -43,3 +49,5 @@ let removedSection = main[0].removeChild(section[1]);
 
 section[1].style.marginRight = 'auto'
 section[0].parentNode.style.backgroundColor = 'green'
+
+rmLastItem(2)
