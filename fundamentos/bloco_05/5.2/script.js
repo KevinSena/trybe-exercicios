@@ -37,4 +37,4 @@ appendToChild(section[2], 'ul', '', 'unorded_list')
 putSrc(img[0], "https://picsum.photos/200")
 
 loopElements(ul[0], 'li', listItems)
-loopElements(main[0], 'h3', Array(3).fill(''), 'Titulo_3')
+loopElements(main[0], 'h3', Array(3).fill("Lorem Ipsum"), 'description')
