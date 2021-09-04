@@ -42,3 +42,4 @@ loopElements(main[0], 'h3', Array(3).fill("Lorem Ipsum"), 'description')
 let removedSection = main[0].removeChild(section[1]);
 
 section[1].style.marginRight = 'auto'
+section[0].parentNode.style.backgroundColor = 'green'
