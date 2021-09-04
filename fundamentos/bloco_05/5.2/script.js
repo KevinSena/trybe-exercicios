@@ -38,3 +38,5 @@ putSrc(img[0], "https://picsum.photos/200")
 
 loopElements(ul[0], 'li', listItems)
 loopElements(main[0], 'h3', Array(3).fill("Lorem Ipsum"), 'description')
+
+let removedSection = main[0].removeChild(section[1])
