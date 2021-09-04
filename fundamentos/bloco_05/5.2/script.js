@@ -25,7 +25,7 @@ function loopElements(element, tag, array, className) {
   }
 }
 
-appendToChild(body, 'h1', 'Exercício 5.2 - JavaScript DOM', 'Titulo')
+appendToChild(body, 'h1', 'Exercício 5.2 - JavaScript DOM', 'title')
 appendToChild(body, 'main', '', 'main-content')
 appendToChild(main[0], 'section', '', 'center-content')
 appendToChild(main[0], 'section', '', 'left-content')
