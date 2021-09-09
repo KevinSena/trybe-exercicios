@@ -22,6 +22,10 @@ function q(params) {
   return document.body.querySelector(params);
 }
 
+function qAll(params) {
+  return document.body.querySelectorAll(params);
+}
+
 function appendToChild(element, tag, text, className, id){
   let stuf = document.createElement(tag)
   stuf.innerText = text;
@@ -61,6 +65,26 @@ createDaysOfMonth();
 // Task 2
 let buttonContainer = q('.buttons-container');
 
-appendToChild(buttonContainer, 'button', 'Feriados', '', 'btn-holiday')
+appendToChild(buttonContainer, 'button', 'Feriados', 'undefined', 'btn-holiday');
 
 // Task 3
+
+let btnHoliday = q('#btn-holiday');
+btnHoliday.addEventListener('click', changeHolidayColor);
+let changed = false;
+
+function changeHolidayColor() {
+  let holiday = qAll('.holiday');
+
+  if (changed === false) {
+    for (const iterator of holiday) {
+      iterator.style.backgroundColor = 'greenyellow';
+    }
+    changed = true;
+  } else if (changed === true) {
+    for (const iterator of holiday) {
+      iterator.style.backgroundColor = 'rgb(238,238,238)';
+    }
+    changed = false;
+  }
+}
