@@ -12,8 +12,6 @@ function createDaysOfTheWeek() {
 };
 
 createDaysOfTheWeek();
-createDaysOfMonth();
-
 
 // Utilities
 function addClass(element, className) {
@@ -24,10 +22,11 @@ function q(params) {
   return document.body.querySelector(params);
 }
 
-function appendToChild(element, tag, text, className){
+function appendToChild(element, tag, text, className, id){
   let stuf = document.createElement(tag)
   stuf.innerText = text;
   element.appendChild(stuf).classList.add(className)
+  stuf.id = id
 }
 
 function loopDias(indice, array, element, className) {
@@ -51,9 +50,17 @@ function createDaysOfMonth() {
     let ul = q('ul#days');
     let lastLi = ul.getElementsByTagName("li");
 
-    appendToChild(ul, 'li', dezDaysList[i], 'day');
+    appendToChild(ul, 'li', dezDaysList[i], 'day', '');
     loopDias(dezDaysList[i], holiday, lastLi[i], 'holiday');
     loopDias(dezDaysList[i], friday, lastLi[i], 'friday');
   }
 }
 
+createDaysOfMonth();
+
+// Task 2
+let buttonContainer = q('.buttons-container');
+
+appendToChild(buttonContainer, 'button', 'Feriados', '', 'btn-holiday')
+
+// Task 3
