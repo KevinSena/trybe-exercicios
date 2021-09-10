@@ -88,3 +88,7 @@ function changeHolidayColor() {
     changed = false;
   }
 }
+
+// task 4
+
+appendToChild(buttonContainer, 'button', 'Sexta-feira', 'undefined', 'btn-friday');
