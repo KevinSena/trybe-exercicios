@@ -141,4 +141,13 @@ function lowText(event) {
 // task 7
 let myTasks = q('.my-tasks');
 
-appendToChild(myTasks, 'span', 'Cozinnhar', 'tasks');
+appendToChild(myTasks, 'span', 'Cozinnhar:', 'tasks');
+
+// task 8
+addColor(myTasks, 'div', 'task', 'green')
+
+function addColor(father, child, className, color) {
+  let stuf = document.createElement(child);
+  stuf.style.backgroundColor = color;
+  father.appendChild(stuf).classList.add(className);
+}
