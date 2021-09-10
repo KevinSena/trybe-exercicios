@@ -167,3 +167,24 @@ function changeToSelected() {
     selected = false;
   }
 }
+
+// task 10
+let clicked = false
+let divColor = div.style.backgroundColor
+
+selectedDay()
+
+function selectedDay() {
+  for (const iterator of qAll('.day')) {
+    iterator.addEventListener('click', function () {
+      if (selected === false) {
+        iterator.style.color = divColor
+        selected = true
+      } else if (selected === true){
+        iterator.style.color = 'rgb(119,119,119)'
+        selected = false
+      }
+    })
+  }
+}
+
