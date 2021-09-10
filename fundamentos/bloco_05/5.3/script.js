@@ -137,3 +137,8 @@ function highText(event) {
 function lowText(event) {
   event.target.style.fontSize = '20px';
 }
+
+// task 7
+let myTasks = q('.my-tasks');
+
+appendToChild(myTasks, 'span', 'Cozinnhar', 'tasks');
