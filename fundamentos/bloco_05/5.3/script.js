@@ -44,12 +44,11 @@ function loopDias(indice, array, element, className) {
 // Escreva seu código abaixo.
 
 // Task 1
-  const friday = [4, 11, 18, 25];
-  const holiday = [24, 25, 31];
-  const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+const friday = [4, 11, 18, 25];
+const holiday = [24, 25, 31];
+const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+
 function createDaysOfMonth() {
-
-
   for (let i = 0; i < dezDaysList.length; i += 1) {
     let ul = q('ul#days');
     let lastLi = ul.getElementsByTagName("li");
@@ -113,4 +112,28 @@ function changeFridayColor() {
     }
     changedFriday = false;
   }
+}
+
+// task 6
+daysMouseOver()
+daysMouseout()
+
+function daysMouseOver() {
+  for (const iterator of qAll('.day')) {
+    iterator.addEventListener('mouseover', highText)
+  }
+}
+
+function daysMouseout() {
+  for (const iterator of qAll('.day')) {
+    iterator.addEventListener('mouseout', lowText)
+  }
+}
+
+function highText(event) {
+  event.target.style.fontSize = '30px';
+}
+
+function lowText(event) {
+  event.target.style.fontSize = '20px';
 }
