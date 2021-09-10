@@ -151,3 +151,19 @@ function addColor(father, child, className, color) {
   stuf.style.backgroundColor = color;
   father.appendChild(stuf).classList.add(className);
 }
+
+// task 9
+
+let div = q('.task');
+let selected = false;
+div.addEventListener('click', changeToSelected);
+
+function changeToSelected() {
+  if (selected === false) {
+    div.className += ' selected'
+    selected = true;
+  } else if (selected === true) {
+    div.className = 'task'
+    selected = false;
+  }
+}
