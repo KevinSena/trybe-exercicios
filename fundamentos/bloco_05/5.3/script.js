@@ -44,11 +44,11 @@ function loopDias(indice, array, element, className) {
 // Escreva seu código abaixo.
 
 // Task 1
-
-function createDaysOfMonth() {
   const friday = [4, 11, 18, 25];
   const holiday = [24, 25, 31];
   const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+function createDaysOfMonth() {
+
 
   for (let i = 0; i < dezDaysList.length; i += 1) {
     let ul = q('ul#days');
@@ -70,19 +70,19 @@ appendToChild(buttonContainer, 'button', 'Feriados', 'undefined', 'btn-holiday')
 // Task 3
 
 let btnHoliday = q('#btn-holiday');
-btnHoliday.addEventListener('click', changeHolidayColor);
 let changed = false;
+btnHoliday.addEventListener('click', changeHolidayColor);
 
 function changeHolidayColor() {
-  let holiday = qAll('.holiday');
+  let holidayList = qAll('.holiday');
 
   if (changed === false) {
-    for (const iterator of holiday) {
+    for (const iterator of holidayList) {
       iterator.style.backgroundColor = 'greenyellow';
     }
     changed = true;
   } else if (changed === true) {
-    for (const iterator of holiday) {
+    for (const iterator of holidayList) {
       iterator.style.backgroundColor = 'rgb(238,238,238)';
     }
     changed = false;
@@ -92,3 +92,25 @@ function changeHolidayColor() {
 // task 4
 
 appendToChild(buttonContainer, 'button', 'Sexta-feira', 'undefined', 'btn-friday');
+
+// task 5
+
+let btnFriday = q('#btn-friday');
+let changedFriday = false;
+btnFriday.addEventListener('click', changeFridayColor);
+
+function changeFridayColor() {
+  let fridayList = qAll('.friday');
+
+  if (changedFriday === false) {
+    for (const iterator of fridayList) {
+      iterator.innerText = 'SEXTOU';
+    }
+    changedFriday = true;
+  } else if (changedFriday === true) {
+    for (let i = 0; i < fridayList.length; i += 1) {
+      fridayList[i].innerText = friday[i];
+    }
+    changedFriday = false;
+  }
+}
