@@ -12,16 +12,54 @@
   <form class="container mx-auto mt-6 has-background-light" method="get">
     <h1 class="title">Formulário de cadastro de currículo</h1>
     
-    <div class="field">
-      <label class="label">Nome Completo</label>
-      <div class="control has-icons-left has-icons-right">
-        <input maxlength="40" class="input" type="text" placeholder="Text input">
-        <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-        </span>
-        <span class="icon is-small is-right">
-          <i class="fas fa-check"></i>
-        </span>
+    <div class="columns">
+      <div class="column">
+        <div class="field">
+          <label class="label">Nome Completo</label>
+          <div class="control has-icons-left">
+            <input maxlength="40" class="input" type="text" placeholder="Text input" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left">
+            <input maxlength="50" class="input" type="email" placeholder="Email input" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-one-quarter-desktop">
+        <div class="field">
+          <label class="label">CPF</label>
+          <div class="control has-icons-left">
+            <input maxlength="11" class="input" type="text" placeholder="CPF input" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-id-card"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="field">
+          <label class="label">Endereço</label>
+          <div class="control has-icons-left">
+            <input maxlength="200" class="input" type="text" placeholder="Text input" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
 </body>
