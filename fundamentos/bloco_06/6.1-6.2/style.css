@@ -10,7 +10,6 @@ body, html {
 }
 
 form {
-  border: 1px solid gray;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 2.3rem;
 }

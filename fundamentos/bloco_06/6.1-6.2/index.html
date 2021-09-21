@@ -17,7 +17,7 @@
         <div class="field">
           <label class="label">Nome Completo</label>
           <div class="control has-icons-left">
-            <input maxlength="40" class="input" type="text" placeholder="Text input" required>
+            <input maxlength="40" class="input" type="text" required>
             <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
             </span>
@@ -28,7 +28,7 @@
         <div class="field">
           <label class="label">Email</label>
           <div class="control has-icons-left">
-            <input maxlength="50" class="input" type="email" placeholder="Email input" required>
+            <input maxlength="50" class="input" type="email" required>
             <span class="icon is-small is-left">
               <i class="fas fa-envelope"></i>
             </span>
@@ -42,7 +42,7 @@
         <div class="field">
           <label class="label">CPF</label>
           <div class="control has-icons-left">
-            <input maxlength="11" class="input" type="text" placeholder="CPF input" required>
+            <input maxlength="11" class="input" type="text" required>
             <span class="icon is-small is-left">
               <i class="fas fa-id-card"></i>
             </span>
@@ -54,7 +54,7 @@
         <div class="field">
           <label class="label">Endereço</label>
           <div class="control has-icons-left">
-            <input maxlength="200" class="input" type="text" placeholder="Text input" required>
+            <input maxlength="200" class="input" type="text" required>
             <span class="icon is-small is-left">
               <i class="fas fa-map-marker-alt"></i>
             </span>
@@ -62,5 +62,55 @@
         </div>
       </div>
     </div>
+
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="field">
+          <label class="label">Cidade</label>
+          <div class="control">
+            <input maxlength="28" class="input" type="text" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-fifth">
+        <label for="select-state" class="label">Estado</label>
+        <div class="select">
+          <select name="estados" id="select-state">
+            <option>Selecione seu estado</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">
+        <label class="label">Tipo</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="answer">
+            Casa
+          </label>
+          <label class="radio">
+            <input type="radio" name="answer">
+            Apartamento
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="title">Dados do seu último emprego</h1>
+
+    <div class="control">
+      <label class="label">Resumo do currículo</label>
+      <textarea maxlength="1000" class="textarea" placeholder="10 lines of textarea" rows="10"></textarea>
+    </div>
+
+    <div class="columns">
+      <div class="column"></div>
+      <div class="column"></div>
+      <div class="column"></div>
+    </div>
+    
+  </form>
+  <script src="/script.js"></script>
 </body>
 </html>
