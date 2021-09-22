@@ -1,0 +1,17 @@
+@import './node_modules/pikaday/css/pikaday.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: #264653;
+  height: 100vh;
+}
+
+form {
+  border-radius: 15px;
+  padding: 2.3rem;
+}

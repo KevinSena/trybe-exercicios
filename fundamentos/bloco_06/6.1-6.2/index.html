@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <script src="https://kit.fontawesome.com/df96d89ef0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form class="container mx-auto mt-6 has-background-light" method="get">
+    <h1 class="title">Formulário de cadastro de currículo</h1>
+    
+    <div class="columns">
+      <div class="column">
+        <div class="field">
+          <label class="label">Nome Completo</label>
+          <div class="control has-icons-left">
+            <input maxlength="40" class="input" type="text" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left">
+            <input maxlength="50" class="input" type="email" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-one-quarter-desktop">
+        <div class="field">
+          <label class="label">CPF</label>
+          <div class="control has-icons-left">
+            <input maxlength="11" class="input" type="text" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-id-card"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="field">
+          <label class="label">Endereço</label>
+          <div class="control has-icons-left">
+            <input maxlength="200" class="input" type="text" required>
+            <span class="icon is-small is-left">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="field">
+          <label class="label">Cidade</label>
+          <div class="control">
+            <input maxlength="28" class="input" type="text" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-fifth">
+        <label for="select-state" class="label">Estado</label>
+        <div class="select">
+          <select name="estados" id="select-state">
+            <option>Selecione seu estado</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">
+        <label class="label">Tipo</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="answer">
+            Casa
+          </label>
+          <label class="radio">
+            <input type="radio" name="answer">
+            Apartamento
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="title">Dados do seu último emprego</h1>
+
+    <div class="control">
+      <label class="label">Resumo do currículo</label>
+      <textarea maxlength="1000" class="textarea" placeholder="10 lines of textarea" rows="10"></textarea>
+    </div>
+
+    <div class="columns mt-4">
+      <div class="column is-one-quarter">
+        <div class="field">
+          <label class="label">Cargo</label>
+          <div class="control">
+            <input maxlength="40" class="input" type="text" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="field">
+          <label class="label">Descrição do Cargo</label>
+          <div class="control">
+            <input maxlength="500" class="input" type="text" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">
+        <div class="field">
+          <label class="label">Data</label>
+          <div class="control">
+            <input class="input" type="text" id="datepicker" required>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <button type="submit" class="button mx-3" id="submit">Enviar</button>
+      <button type="reset" class="button">Limpar</button>
+    </div>
+  </form>
+  <script src="/script.js"></script>
+  <script src="/node_modules/pikaday/pikaday.js"></script>
+  <script>
+    var picker = new Pikaday({
+    field: document.getElementById('datepicker'),
+    format: 'D/M/YYYY',
+    toString(date, format) {
+        // you should do formatting based on the passed format,
+        // but we will just return 'D/M/YYYY' for simplicity
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    },
+    parse(dateString, format) {
+        // dateString is the result of `toString` method
+        const parts = dateString.split('/');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        return new Date(year, month, day);
+    }
+    });
+</script>
+</body>
+</html>
