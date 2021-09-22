@@ -18,3 +18,7 @@ function putSelect(array) {
 }
 
 putSelect(stateList)
+
+q('#submit').addEventListener('click', () => {
+  preventDefault();
+})

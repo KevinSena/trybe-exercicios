@@ -104,13 +104,63 @@
       <textarea maxlength="1000" class="textarea" placeholder="10 lines of textarea" rows="10"></textarea>
     </div>
 
-    <div class="columns">
-      <div class="column"></div>
-      <div class="column"></div>
-      <div class="column"></div>
+    <div class="columns mt-4">
+      <div class="column is-one-quarter">
+        <div class="field">
+          <label class="label">Cargo</label>
+          <div class="control">
+            <input maxlength="40" class="input" type="text" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="field">
+          <label class="label">Descrição do Cargo</label>
+          <div class="control">
+            <input maxlength="500" class="input" type="text" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter">
+        <div class="field">
+          <label class="label">Data</label>
+          <div class="control">
+            <input class="input" type="text" id="datepicker" required>
+          </div>
+        </div>
+      </div>
     </div>
-    
+
+    <div class="columns is-centered">
+      <button type="submit" class="button mx-3" id="submit">Enviar</button>
+      <button type="reset" class="button">Limpar</button>
+    </div>
   </form>
   <script src="/script.js"></script>
+  <script src="/node_modules/pikaday/pikaday.js"></script>
+  <script>
+    var picker = new Pikaday({
+    field: document.getElementById('datepicker'),
+    format: 'D/M/YYYY',
+    toString(date, format) {
+        // you should do formatting based on the passed format,
+        // but we will just return 'D/M/YYYY' for simplicity
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    },
+    parse(dateString, format) {
+        // dateString is the result of `toString` method
+        const parts = dateString.split('/');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        return new Date(year, month, day);
+    }
+    });
+</script>
 </body>
 </html>
