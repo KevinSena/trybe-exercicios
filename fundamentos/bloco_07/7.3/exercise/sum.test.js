@@ -1,4 +1,4 @@
-const { sum, myRemove } = require('./sum');
+const { sum, myRemove, myFizzBuzz } = require('./sum');
 // const myRemove = require('./sum')
 
 describe('1 - A função sum(a, b) retorna a soma do parâmetro a com o b', () => {
@@ -19,3 +19,21 @@ describe('2 - Recebe um array arr e retorna uma cópia desse array sem o element
     expect(myRemove([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
   })
 });
+
+describe('3 - Recebe um número num e retorna se é "fizzbuzz"', () => {
+  test('Chamada com um número divisível por 3 e 5', () => {
+    expect(myFizzBuzz(15)).toBe('fizzbuzz');
+  })
+  test('Chamada com um número divisível por 3', () => {
+    expect(myFizzBuzz(99)).toBe('fizz');
+  })
+  test('Chamada com um número divisível por 5', () => {
+    expect(myFizzBuzz(55)).toBe('buzz');
+  })
+  test('Chamada com um número divisível por 3 e 5', () => {
+    expect(myFizzBuzz(47)).toBe(47);
+  })
+  test('Chamada com um número divisível por 3 e 5', () => {
+    expect(myFizzBuzz('myself')).toBe(false);
+  })
+})
