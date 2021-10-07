@@ -82,6 +82,8 @@ const getNamedBook = () => books.find((e) => e.name.length === 26);
 const booksOrderedByReleaseYearDesc = () => books.sort((a, b) => b.releaseYear - a.releaseYear);
 
 const everyoneWasBornOnSecXX = () => books.every((e) => e.author.birthYear >= 1900);
+// eslint-disable-next-line max-len
+const someBookWasReleaseOnThe80s = () => books.some((e) => e.releaseYear >= 1980 && e.releaseYear < 1990);
 
 module.exports = {
   authorBornIn1947,
@@ -89,4 +91,5 @@ module.exports = {
   getNamedBook,
   booksOrderedByReleaseYearDesc,
   everyoneWasBornOnSecXX,
+  someBookWasReleaseOnThe80s,
 };

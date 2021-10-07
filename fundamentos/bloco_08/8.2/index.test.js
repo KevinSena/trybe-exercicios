@@ -1,4 +1,4 @@
-const {authorBornIn1947, smallerName, getNamedBook, booksOrderedByReleaseYearDesc, everyoneWasBornOnSecXX} = require('./index');
+const {authorBornIn1947, smallerName, getNamedBook, booksOrderedByReleaseYearDesc, everyoneWasBornOnSecXX, someBookWasReleaseOnThe80s} = require('./index');
 
 describe('Lista de Livros', () => {
   test('Encontra o nome da primeira pessoa autora do livro nascida no ano de 1947.', () => expect(authorBornIn1947()).toEqual('Stephen King'))
@@ -65,5 +65,8 @@ describe('Lista de Livros', () => {
   })
   test('Faça uma função que retorne true , se todas as pessoas autoras nasceram no século XX, ou false , caso contrário.', () => {
     expect(everyoneWasBornOnSecXX()).toBeFalsy()
+  })
+  test('Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário.', () => {
+    expect(someBookWasReleaseOnThe80s()).toBeTruthy()
   })
 });
