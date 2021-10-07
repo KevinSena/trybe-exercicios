@@ -66,4 +66,17 @@ const authorBornIn1947 = () => {
   return found.author.name;
 };
 
-module.exports = { authorBornIn1947 };
+const smallerName = () => {
+  let namebook;
+
+  books.forEach((e) => {
+    if (namebook === undefined) namebook = e.name;
+    else if (e.name.length < namebook.length) namebook = e.name;
+  });
+
+  return namebook;
+};
+
+console.log(smallerName());
+
+module.exports = { authorBornIn1947, smallerName };

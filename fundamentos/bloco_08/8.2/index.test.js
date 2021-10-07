@@ -1,4 +1,4 @@
-const {authorBornIn1947} = require('./index');
+const {authorBornIn1947, smallerName} = require('./index');
 
 describe('Lista de Livros', () => {
   test('Encontra o nome da primeira pessoa autora do livro nascida no ano de 1947.', () => expect(authorBornIn1947()).toEqual('Stephen King'))
