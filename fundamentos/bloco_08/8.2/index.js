@@ -85,6 +85,16 @@ const everyoneWasBornOnSecXX = () => books.every((e) => e.author.birthYear >= 19
 // eslint-disable-next-line max-len
 const someBookWasReleaseOnThe80s = () => books.some((e) => e.releaseYear >= 1980 && e.releaseYear < 1990);
 
+const authorUnique = () => {
+  let state = true;
+  books.forEach((e) => {
+    const actual = e.author.birthYear;
+    const found = books.find((el) => el.author.birthYear === actual && el.id !== e.id);
+    if (found !== undefined) state = false;
+  });
+  return state;
+};
+
 module.exports = {
   authorBornIn1947,
   smallerName,
@@ -92,4 +102,5 @@ module.exports = {
   booksOrderedByReleaseYearDesc,
   everyoneWasBornOnSecXX,
   someBookWasReleaseOnThe80s,
+  authorUnique,
 };
