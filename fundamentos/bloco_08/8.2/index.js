@@ -77,6 +77,6 @@ const smallerName = () => {
   return namebook;
 };
 
-console.log(smallerName());
+const getNamedBook = () => books.find((e) => e.name.length === 26);
 
-module.exports = { authorBornIn1947, smallerName };
+module.exports = { authorBornIn1947, smallerName, getNamedBook };
