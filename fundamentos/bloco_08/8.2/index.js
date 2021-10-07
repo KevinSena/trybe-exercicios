@@ -79,4 +79,14 @@ const smallerName = () => {
 
 const getNamedBook = () => books.find((e) => e.name.length === 26);
 
-module.exports = { authorBornIn1947, smallerName, getNamedBook };
+const booksOrderedByReleaseYearDesc = () => books.sort((a, b) => b.releaseYear - a.releaseYear);
+
+const everyoneWasBornOnSecXX = () => books.every((e) => e.author.birthYear >= 1900);
+
+module.exports = {
+  authorBornIn1947,
+  smallerName,
+  getNamedBook,
+  booksOrderedByReleaseYearDesc,
+  everyoneWasBornOnSecXX,
+};
