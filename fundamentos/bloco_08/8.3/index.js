@@ -63,6 +63,18 @@ const books = [
 
 const formatedBookNames = () => books.map((book) => `${book.name} - ${book.genre} - ${book.author.name}`);
 
+const nameAndAge = () => books.map((book) => {
+  const { author, releaseYear } = book;
+  const authorAge = releaseYear - author.birthYear;
+  const authorObject = {
+    age: authorAge,
+    author: author.name,
+  };
+  return authorObject;
+})
+  .sort((a, b) => a.age - b.age);
+
 module.exports = {
   formatedBookNames,
+  nameAndAge,
 };
