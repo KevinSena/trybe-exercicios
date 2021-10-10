@@ -61,10 +61,9 @@ const books = [
   },
 ];
 
-const formatedBookNames = () => books.map((book) => `${book.name} - ${book.genre} - ${book.author.name}`);
+const formatedBookNames = () => books.map(({ name, genre, author }) => `${name} - ${genre} - ${author.name}`);
 
-const nameAndAge = () => books.map((book) => {
-  const { author, releaseYear } = book;
+const nameAndAge = () => books.map(({ author, releaseYear }) => {
   const authorAge = releaseYear - author.birthYear;
   const authorObject = {
     age: authorAge,
@@ -74,7 +73,11 @@ const nameAndAge = () => books.map((book) => {
 })
   .sort((a, b) => a.age - b.age);
 
+const fantasyOrScienceFiction = () => books.filter(({ genre }) => genre === 'Ficção Científica' || genre === 'Fantasia');
+
 module.exports = {
+  books,
   formatedBookNames,
   nameAndAge,
+  fantasyOrScienceFiction,
 };
