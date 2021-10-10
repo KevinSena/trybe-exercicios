@@ -87,6 +87,15 @@ const oldBooks = () => books
   .filter(({ releaseYear }) => 2021 - releaseYear >= 60)
   .map(({ name }) => name);
 
+const authorWith3DotsOnName = () => books.find(({ author }) => {
+  const nameReceived = author.name;
+  let result = true;
+  for (let i = 0; i < 3; i += 1) {
+    if (nameReceived.split(' ')[0][1] !== '.') result = false;
+  }
+  return result;
+}).name;
+
 module.exports = {
   formatedBookNames,
   nameAndAge,
@@ -94,4 +103,5 @@ module.exports = {
   oldBooksOrdered,
   fantasyOrScienceFictionAuthors,
   oldBooks,
+  authorWith3DotsOnName,
 };
