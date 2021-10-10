@@ -75,9 +75,13 @@ const nameAndAge = () => books.map(({ author, releaseYear }) => {
 
 const fantasyOrScienceFiction = () => books.filter(({ genre }) => genre === 'Ficção Científica' || genre === 'Fantasia');
 
+const oldBooksOrdered = () => books
+  .filter(({ releaseYear }) => 2021 - releaseYear >= 60)
+  .sort((a, b) => a.releaseYear - b.releaseYear);
+
 module.exports = {
-  books,
   formatedBookNames,
   nameAndAge,
   fantasyOrScienceFiction,
+  oldBooksOrdered,
 };
