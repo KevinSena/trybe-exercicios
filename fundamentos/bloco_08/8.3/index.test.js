@@ -1,4 +1,4 @@
-const {formatedBookNames, nameAndAge, fantasyOrScienceFiction, oldBooksOrdered, fantasyOrScienceFictionAuthors} = require('./index')
+const {formatedBookNames, nameAndAge, fantasyOrScienceFiction, oldBooksOrdered, fantasyOrScienceFictionAuthors, oldBooks, authorWith3DotsOnName} = require('./index')
 
 describe('Usando map e filter', () => {
   it('Crie um array com strings no formato NOME_DO_LIVRO - GÊNERO_DO_LIVRO - NOME_DA_PESSOA_AUTORA', () => {
@@ -109,5 +109,19 @@ describe('Usando map e filter', () => {
     ];
     
     expect(fantasyOrScienceFictionAuthors()).toEqual(expectedResult)
+  })
+  it('Crie um array com o nome de todos os livros com mais de 60 anos de publicação', () => {
+    const expectedResult = [
+      'O Senhor dos Anéis',
+      'Fundação',
+      'O Chamado de Cthulhu',
+    ];
+    
+    expect(oldBooks()).toEqual(expectedResult)
+  })
+  it('Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais', () => {
+    const expectedResult = 'O Senhor dos Anéis';
+    
+    expect(authorWith3DotsOnName()).toEqual(expectedResult)
   })
 })

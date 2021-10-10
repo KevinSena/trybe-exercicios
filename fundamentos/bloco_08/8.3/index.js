@@ -83,10 +83,15 @@ const fantasyOrScienceFictionAuthors = () => fantasyOrScienceFiction()
   .map(({ author }) => author.name)
   .sort();
 
+const oldBooks = () => books
+  .filter(({ releaseYear }) => 2021 - releaseYear >= 60)
+  .map(({ name }) => name);
+
 module.exports = {
   formatedBookNames,
   nameAndAge,
   fantasyOrScienceFiction,
   oldBooksOrdered,
   fantasyOrScienceFictionAuthors,
+  oldBooks,
 };
