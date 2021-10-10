@@ -61,7 +61,11 @@ const books = [
   },
 ];
 
-const reduceNames = () => books;
+const reduceNames = () => books.reduce((returned, current, index) => {
+  if (returned === '') return current.author.name;
+  if (index === books.length - 1) return `${returned}, ${current.author.name}.`;
+  return `${returned}, ${current.author.name}`;
+}, '');
 
 module.exports = {
   reduceNames,
