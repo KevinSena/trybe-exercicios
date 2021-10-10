@@ -1,4 +1,4 @@
-const {formatedBookNames, nameAndAge, fantasyOrScienceFiction, oldBooksOrdered} = require('./index')
+const {formatedBookNames, nameAndAge, fantasyOrScienceFiction, oldBooksOrdered, fantasyOrScienceFictionAuthors} = require('./index')
 
 describe('Usando map e filter', () => {
   it('Crie um array com strings no formato NOME_DO_LIVRO - GÊNERO_DO_LIVRO - NOME_DA_PESSOA_AUTORA', () => {
@@ -99,5 +99,15 @@ describe('Usando map e filter', () => {
       },
     ];
     expect(oldBooksOrdered()).toEqual(expectedResult)
+  })
+  it('Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia', () => {
+    const expectedResult = [
+      'Frank Herbert',
+      'George R. R. Martin',
+      'Isaac Asimov',
+      'J. R. R. Tolkien',
+    ];
+    
+    expect(fantasyOrScienceFictionAuthors()).toEqual(expectedResult)
   })
 })
