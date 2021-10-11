@@ -1,4 +1,4 @@
-const {reduceNames, averageAge, longestNamedBook, containsA, flatten} = require('./index');
+const {reduceNames, averageAge, longestNamedBook, containsA, flatten, studentAverage} = require('./index');
 
 describe('Execícios dia 8.4', () => {
   it('Crie uma string com os nomes de todas as pessoas autoras', () => {
@@ -28,5 +28,13 @@ describe('Execícios dia 8.4', () => {
   it('Dada uma matriz, transforme em um array.', () => {
     const expectedResult = ['1', '2', '3',true,4, 5, 6]
     expect(flatten()).toEqual(expectedResult)
+  })
+  it('Retorna objecto com nome e nota.', () => {
+    const expectedResult = [
+      { name: 'Pedro Henrique', average: 7.8 },
+      { name: 'Miguel', average: 9.2 },
+      { name: 'Maria Clara', average: 8.8 },
+    ];
+    expect(studentAverage()).toEqual(expectedResult)
   })
 })
