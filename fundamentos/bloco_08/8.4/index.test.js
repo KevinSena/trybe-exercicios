@@ -1,4 +1,4 @@
-const {reduceNames, averageAge, longestNamedBook} = require('./index');
+const {reduceNames, averageAge, longestNamedBook, containsA} = require('./index');
 
 describe('Execícios dia 8.4', () => {
   it('Crie uma string com os nomes de todas as pessoas autoras', () => {
@@ -21,5 +21,8 @@ describe('Execícios dia 8.4', () => {
       releaseYear: 1991,
     };
     expect(longestNamedBook()).toEqual(expectedResult)
+  })
+  it('retorne a quantidade de vezes em que aparecem a letra a maiúscula ou minúscula.', () => {
+    expect(containsA()).toEqual(20)
   })
 })

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const books = [
   {
     id: 1,
@@ -75,8 +76,20 @@ const averageAge = () => books.reduce((returned, { releaseYear, author }, index)
 const longestNamedBook = () => books
   .reduce((prev, curr) => (curr.name.length > prev.name ? curr : prev));
 
+const names = [
+  'Aanemarie', 'Adervandes', 'Akifusa',
+  'Abegildo', 'Adicellia', 'Aladonata',
+  'Abeladerco', 'Adieidy', 'Alarucha',
+];
+
+const containsA = () => names.reduce((prev, curr) => {
+  prev += curr.toLowerCase().split('').filter((el) => el === 'a').length;
+  return prev;
+}, 0);
+
 module.exports = {
   reduceNames,
   averageAge,
   longestNamedBook,
+  containsA,
 };
