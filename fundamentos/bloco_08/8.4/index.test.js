@@ -1,4 +1,4 @@
-const {reduceNames, averageAge, longestNamedBook, containsA} = require('./index');
+const {reduceNames, averageAge, longestNamedBook, containsA, flatten} = require('./index');
 
 describe('Execícios dia 8.4', () => {
   it('Crie uma string com os nomes de todas as pessoas autoras', () => {
@@ -24,5 +24,9 @@ describe('Execícios dia 8.4', () => {
   })
   it('retorne a quantidade de vezes em que aparecem a letra a maiúscula ou minúscula.', () => {
     expect(containsA()).toEqual(20)
+  })
+  it('Dada uma matriz, transforme em um array.', () => {
+    const expectedResult = ['1', '2', '3',true,4, 5, 6]
+    expect(flatten()).toEqual(expectedResult)
   })
 })
