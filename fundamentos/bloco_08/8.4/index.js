@@ -67,6 +67,12 @@ const reduceNames = () => books.reduce((returned, current, index) => {
   return `${returned}, ${current.author.name}`;
 }, '');
 
+const averageAge = () => books.reduce((returned, { releaseYear, author }, index) => {
+  const age = releaseYear - author.birthYear;
+  return index + 1 === books.length ? ((returned + age) / books.length) : returned + age;
+}, 0);
+
 module.exports = {
   reduceNames,
+  averageAge,
 };
