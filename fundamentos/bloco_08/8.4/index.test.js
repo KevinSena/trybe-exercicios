@@ -1,4 +1,4 @@
-const {reduceNames, averageAge} = require('./index');
+const {reduceNames, averageAge, longestNamedBook} = require('./index');
 
 describe('Execícios dia 8.4', () => {
   it('Crie uma string com os nomes de todas as pessoas autoras', () => {
@@ -8,5 +8,18 @@ describe('Execícios dia 8.4', () => {
   it('Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.', () => {
     const expectedResult = 43;
     expect(averageAge()).toEqual(expectedResult)
-  }) 
+  })
+  it('Encontre o livro com o maior nome.', () => {
+    const expectedResult = {
+      id: 1,
+      name: 'As Crônicas de Gelo e Fogo',
+      genre: 'Fantasia',
+      author: {
+        name: 'George R. R. Martin',
+        birthYear: 1948,
+      },
+      releaseYear: 1991,
+    };
+    expect(longestNamedBook()).toEqual(expectedResult)
+  })
 })

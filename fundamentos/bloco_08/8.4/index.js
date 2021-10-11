@@ -72,7 +72,11 @@ const averageAge = () => books.reduce((returned, { releaseYear, author }, index)
   return index + 1 === books.length ? ((returned + age) / books.length) : returned + age;
 }, 0);
 
+const longestNamedBook = () => books
+  .reduce((prev, curr) => (curr.name.length > prev.name ? curr : prev));
+
 module.exports = {
   reduceNames,
   averageAge,
+  longestNamedBook,
 };
