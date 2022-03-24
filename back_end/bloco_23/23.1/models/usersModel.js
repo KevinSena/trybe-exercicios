@@ -5,4 +5,9 @@ const setUser = async (firstName, lastName, email, password) => {
   [firstName, lastName, email, password]);
 };
 
-module.exports = { setUser };
+const getUsers = async () => {
+  const [users] = await connection.execute('SELECT * FROM users.usersData');
+  return users;
+};
+
+module.exports = { setUser, getUsers };
