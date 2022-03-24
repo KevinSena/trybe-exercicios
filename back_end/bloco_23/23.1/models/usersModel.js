@@ -1,8 +1,11 @@
 const connection = require("./connection");
 
 const setUser = async (firstName, lastName, email, password) => {
-  await connection.execute('INSERT INTO users.usersData (firstName, lastName, email, userPassword) VALUES (?, ?, ?, ?)',
+  const [{insertId}] = await connection
+    .execute(`INSERT INTO users.usersData (firstName, lastName, email, userPassword) 
+      VALUES (?, ?, ?, ?)`,
   [firstName, lastName, email, password]);
+  return insertId;
 };
 
 const getUsers = async () => {
@@ -15,4 +18,11 @@ const getById = async (id) => {
   return users;
 };
 
-module.exports = { setUser, getUsers, getById };
+const changeById = (id, firstName, lastName, email, password) => connection
+  .execute(`
+    UPDATE users.usersData
+    SET firstName=?, lastName=?, email=?, userPassword=?
+    WHERE id=?`,
+  [firstName, lastName, email, password, id]);
+
+module.exports = { setUser, getUsers, getById, changeById };
