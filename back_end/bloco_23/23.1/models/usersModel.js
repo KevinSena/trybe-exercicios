@@ -10,4 +10,9 @@ const getUsers = async () => {
   return users;
 };
 
-module.exports = { setUser, getUsers };
+const getById = async (id) => {
+  const [users] = await connection.execute('SELECT * FROM users.usersData WHERE id=?', [id]);
+  return users;
+};
+
+module.exports = { setUser, getUsers, getById };
