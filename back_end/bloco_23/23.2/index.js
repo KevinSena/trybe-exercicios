@@ -5,6 +5,8 @@ const PORT = 3000;
 
 const cepRouter = require('./routers/cepRouter');
 
+app.use(express.json());
+
 app.get('/ping', (_req, res) => res.status(200).json({ "message": "pong!" }));
 
 app.use('/cep', cepRouter);

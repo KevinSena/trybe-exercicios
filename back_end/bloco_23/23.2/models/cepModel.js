@@ -5,4 +5,13 @@ const getById = async (cep) => {
   return result;
 };
 
-module.exports = {getById};
+const create = async (cep, logradouro, bairro, localidade, uf) => {
+  const [result] = await connection.execute(
+    `INSERT INTO cep_lookup.ceps (cep, logradouro, bairro, localidade, uf)
+    VALUES (?, ?, ?, ?, ?)`,
+    [cep, logradouro, bairro, localidade, uf]
+  );
+  return result;
+};
+
+module.exports = {getById, create};
